@@ -1,0 +1,26 @@
+server:
+  port: 80
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot_event?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate.format_sql: true
+      hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      hibernate.cache.use_second_level_cache: false
+      hibernate.search.default.directory_provider: filesystem
+      hibernate.search.default.indexBase: ./indexes
+      hibernate.enable_lazy_load_no_trans: true
+    open-in-view: false
+  devtools:
+    restart:
+      enabled: true
